@@ -1,0 +1,8 @@
+SELECT a.AppID, a.AppName, a.OwnerID, a.CurrentStatus, b.Server
+FROM APPInventory a
+LEFT JOIN ServerAppRelationMatrix b
+ON a.AppID = b.AppID
+WHERE AppID =
+--enter Application ID above
+GROUP BY a.AppID, a.AppName, a.OwnerID, a.CurrentStatus, b.Server
+ORDER BY b.Server ASC
